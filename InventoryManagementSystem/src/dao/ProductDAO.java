@@ -17,6 +17,7 @@ public class ProductDAO {
 	private Statement stmt=null;
 	private PreparedStatement pstmt=null;
 	
+	//Get database connection
 	public ProductDAO() {
 		try {
 			DatabaseConnectionFactory dc=new DatabaseConnectionFactory();
@@ -29,6 +30,7 @@ public class ProductDAO {
 		}
 	}
 	
+	//Get list of all products
 	public ResultSet getAllProducts() {
 		try {
 			String prodQuery="select * from products";
@@ -40,6 +42,7 @@ public class ProductDAO {
 		return result;
 	}
 	
+	//Add new product
 	public void addProduct(Product prod) {
 		try {
 			String addQuery="INSERT INTO products(product_code,product_name,quantity,product_price) VALUES(?,?,?,?)";
@@ -56,6 +59,7 @@ public class ProductDAO {
 		
 	}
 	
+	//Delete existing product
 	public void deleteProduct(Product prod) {
 		try {
 			String query="delete from products where product_id=?";
@@ -70,6 +74,7 @@ public class ProductDAO {
 		
 	}
 	
+	//Get list of product ids
 	public List<Integer> getProductIds(){
 		List<Integer> list=new ArrayList<>();
 		try {
@@ -87,6 +92,7 @@ public class ProductDAO {
 		
 	}
 	
+	//Update product details
 	public void updateProduct(Product prod) {
 		try {
 			 String updateQuery="UPDATE products set product_code=?,product_name=?,quantity=?,product_price=? where product_id=?";

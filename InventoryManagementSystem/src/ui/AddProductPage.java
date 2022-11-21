@@ -142,7 +142,7 @@ public class AddProductPage extends JFrame implements ActionListener{
 		if(prodCode.getText().equals("") || prodName.getText().equals("") || prodQty.getText().equals("") || prodPrice.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Please fill all the fields!");
         }else{
-           
+           /* Set product details */
         	product.setProductCode(prodCode.getText());
         	product.setProductName(prodName.getText());
         	product.setQuantity(Integer.parseInt(prodQty.getText()));

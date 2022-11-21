@@ -52,6 +52,7 @@ public class ViewProductsPage extends JFrame implements ActionListener{
         	prodDAO=new ProductDAO();
         	ResultSet rs=prodDAO.getAllProducts();
         	int i=0;
+        	/* Add list of records to the table */
         	while(rs.next()) {
         		prodId=rs.getString(1);
         		prodCode=rs.getString(2);
@@ -69,7 +70,7 @@ public class ViewProductsPage extends JFrame implements ActionListener{
         	e.printStackTrace();
         }
         
-        //To display column headers use JScrollPane
+        /* To display column headers use JScrollPane */
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(jTable);
         panel.setBorder(BorderFactory.createTitledBorder(
