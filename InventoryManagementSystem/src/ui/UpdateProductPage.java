@@ -155,6 +155,7 @@ public class UpdateProductPage extends JFrame implements ActionListener{
         }else{
         	product.setProductId(Integer.parseInt(prodId.getText()));
         	List<Integer> ids=prodDAO.getProductIds();
+        	/* Check if product id exists otherwise throw error */
         	if(ids!=null && ids.size()>0 && ids.contains(Integer.parseInt(prodId.getText()))){
         		product.setProductId(Integer.parseInt(prodId.getText()));
         		product.setProductCode(prodCode.getText());

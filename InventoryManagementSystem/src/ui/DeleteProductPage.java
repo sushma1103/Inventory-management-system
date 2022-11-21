@@ -87,6 +87,7 @@ public class DeleteProductPage extends JFrame implements ActionListener{
         }else{
         	product.setProductId(Integer.parseInt(productId.getText()));
         	List<Integer> ids=prodDAO.getProductIds();
+        	/* Check if entered id is valid */
         	if(ids.contains(Integer.parseInt(productId.getText()))){
         		prodDAO.deleteProduct(product);
         		JOptionPane.showMessageDialog(null,"Product deleted succesfully!");
