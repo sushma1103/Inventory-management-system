@@ -1,6 +1,9 @@
 package dao;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import pojo.User;
 import database.DatabaseConnectionFactory;
 
@@ -70,6 +73,24 @@ public class UserDAO{
         	e.printStackTrace();
     	}
     }
+    
+    //Get list of user names
+    public List<String> getUserNames(){
+		List<String> list=new ArrayList<>();
+		try {
+			 String query = "SELECT name from users";
+			 rs=statement.executeQuery(query);
+			 while(rs.next()) {
+				 list.add(rs.getString(1));
+			 }
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+		
+	}
 }
 
 
