@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import dao.UserDAO;
 import pojo.User;
@@ -34,10 +35,12 @@ public class LoginPage extends JFrame implements ActionListener{
 	
 	private JLabel heading;
 	
+	public static String loggedInUser;
+	
 	public LoginPage() {
 		setTitle("Login page");
 		setPanel();
-		setSize(500,500);
+		setSize(800,500);
 		/* Set frame to center of the screen */
     	setLocationRelativeTo(null);
 		setVisible(true);
@@ -46,14 +49,20 @@ public class LoginPage extends JFrame implements ActionListener{
 	
 	private void setPanel() {
 		panel = new JPanel();
-		heading = new JLabel("Inventory management system!");
+		heading = new JLabel("Inventory management system",JLabel.RIGHT);
 		heading.setFont(new Font("Times New Roman", Font.BOLD, 24));
+		ImageIcon inventoryIcon = createImageIcon("inventory.png",
+                "Inventory image");
+		heading.setIcon(inventoryIcon);
+		/* Set text to left of icon */
+		heading.setHorizontalTextPosition(JLabel.LEFT);
 		
+	
 		userName=new JLabel("Username");
 		name=new JTextField(20);
 	    
 		ImageIcon userIcon = createImageIcon("userIcon.png",
-                "username image");
+                "User image");
 		userName.setIcon(userIcon);
 		
 		
@@ -63,10 +72,12 @@ public class LoginPage extends JFrame implements ActionListener{
 		jpass.setEchoChar('*');
 		
 		ImageIcon passwordIcon = createImageIcon("password.png",
-                "password image");
+                "Password image");
 		password.setIcon(passwordIcon);
 		
 		login=new JButton("Login");
+		
+		//panel.add(heading);
 		
 		setLayout(new GridBagLayout());
 	    GridBagConstraints gc=new GridBagConstraints();
@@ -75,17 +86,22 @@ public class LoginPage extends JFrame implements ActionListener{
 	    gc.weightx=0.5;
 	    gc.weighty=0.5;
 	    
+	    GridBagConstraints c = new GridBagConstraints();
 	    gc.gridx=0;
 	    gc.gridy=0;
+	    /* Set label to center of screen */
+	    c.gridwidth=3;
+	    add(heading,c);
+	   
+	    
+	    
+	    gc.gridx=0;
+	    gc.gridy=1;
 	    gc.gridheight=1;
 	    add(userName,gc);
 	    
 	    gc.gridx=1;
-	    gc.gridy=0;
-	    add(name,gc);
-	    
-	    gc.gridx=1;
-	    gc.gridy=0;
+	    gc.gridy=1;
 	    add(name,gc);
 	    
 	    gc.gridx=0;
@@ -123,6 +139,7 @@ public class LoginPage extends JFrame implements ActionListener{
 			//Check if username exists and password is correct
 			List<String> users=userDAO.getUserNames();
 			if(users.contains(name.getText()) && String.valueOf(jpass.getPassword()).equals("pass123")) {
+				loggedInUser=name.getText();
 				this.dispose();
 				HomePage hp=new HomePage();
 			}
@@ -150,7 +167,7 @@ public class LoginPage extends JFrame implements ActionListener{
 	
 	public static void main(String[] args) {
 		LoginPage page=new LoginPage();
-		System.out.println();
+		
 	}
 
 }

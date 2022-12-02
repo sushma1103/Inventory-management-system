@@ -91,6 +91,26 @@ public class UserDAO{
 		return list;
 		
 	}
+    
+    //Get role corresponding to user
+    public String getRole(String userName) {
+    	String role="";
+    	try {
+    		String query="SELECT * from users where name=?";
+    		prepStatement = connect.prepareStatement(query);
+    		prepStatement.setString(1,userName);
+            rs=prepStatement.executeQuery();
+			 while(rs.next()) {
+				 role=rs.getString(5);
+			 }
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+    	
+    	return role;
+    }
+ 
 }
 
 
