@@ -15,6 +15,8 @@ public class UsersPage extends JFrame implements ActionListener{
 	private JButton viewUser;
 	private JButton deleteUser;
 	
+	private JButton back;
+	
 	public UsersPage() {
 		setTitle("User page");
 		setPanel();
@@ -32,6 +34,7 @@ public class UsersPage extends JFrame implements ActionListener{
 		updateUser=new JButton("Update User");
 		viewUser=new JButton("View User");
 		deleteUser=new JButton("Delete User");
+		back=new JButton("Back");
 		
 		setLayout(new GridBagLayout());
 	    GridBagConstraints gc=new GridBagConstraints();
@@ -57,10 +60,15 @@ public class UsersPage extends JFrame implements ActionListener{
 	    gc.gridy=3;
 	    add(deleteUser,gc);
 	    
+	    gc.gridx=0;
+	    gc.gridy=4;
+	    add(back,gc);
+	    
 	    addUser.addActionListener(this);
 	    updateUser.addActionListener(this);
 	    viewUser.addActionListener(this);
 	    deleteUser.addActionListener(this);    
+	    back.addActionListener(this);
 	}
 	
 	public static void main(String[] args) {
@@ -83,9 +91,13 @@ public class UsersPage extends JFrame implements ActionListener{
 			this.dispose();
 			DeleteUserPage delete=new DeleteUserPage();
 		}
-		else {
+		else if(e.getSource()==viewUser){
 			this.dispose();
 			ViewUsersPage viewUsers=new ViewUsersPage();
+		}
+		else {
+			this.dispose();
+			HomePage hp=new HomePage();
 		}
 	}
 

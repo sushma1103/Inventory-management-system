@@ -1,11 +1,13 @@
 package ui;
 
+import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -28,6 +30,7 @@ public class ViewProductsPage extends JFrame implements ActionListener{
 	private String prodQty="";
 	private String prodPrice="";
 	
+	private JButton back;
 	private ProductDAO prodDAO;
 	
 	public ViewProductsPage() {
@@ -42,7 +45,8 @@ public class ViewProductsPage extends JFrame implements ActionListener{
 	
 	private void setPanel() {
 		panel = new JPanel();
-		panel.setLayout(new GridBagLayout());
+		back=new JButton("Back");
+		
 		String[] columnNames= {"Product Id","Product Code","Name","Quantity","Price"};
 		DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnNames);
@@ -76,14 +80,18 @@ public class ViewProductsPage extends JFrame implements ActionListener{
         panel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createEtchedBorder(), "Products view", TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION));
         
-       panel.add(scrollPane);
+       //panel.add(scrollPane);
+        panel.add(new JScrollPane(jTable), BorderLayout.CENTER);
+	    panel.add(back, BorderLayout.SOUTH);
+	    back.addActionListener(this);
        add(panel);
         
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		this.dispose();
+		ProductsPage hp=new ProductsPage();
 	}
 	
 	public static void main(String[] args) {

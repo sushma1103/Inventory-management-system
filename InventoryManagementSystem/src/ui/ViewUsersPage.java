@@ -1,12 +1,14 @@
 package ui;
 
 
+import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -20,6 +22,8 @@ public class ViewUsersPage extends JFrame implements ActionListener{
 private JPanel panel;
 	
 	private JTable jTable;
+	
+	private JButton back;
 	
 	private String userId="";
 	private String name="";
@@ -38,7 +42,8 @@ private JPanel panel;
 	
 	private void setPanel() {
 		panel = new JPanel();
-		panel.setLayout(new GridBagLayout());
+		back=new JButton("Back");
+		
 		String[] columnNames= {"User Id", "User Name","Email"};
 		DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnNames);
@@ -72,14 +77,17 @@ private JPanel panel;
         panel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createEtchedBorder(), "Users view", TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION));
         
-       panel.add(scrollPane);
-       add(panel);
+        panel.add(new JScrollPane(jTable), BorderLayout.CENTER);
+	    panel.add(back, BorderLayout.SOUTH);
+        back.addActionListener(this);
+        add(panel);
         
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		this.dispose();
+		UsersPage users=new UsersPage();
 	}
 	
 	public static void main(String[] args) {

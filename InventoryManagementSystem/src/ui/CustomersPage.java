@@ -13,6 +13,7 @@ public class CustomersPage extends JFrame implements ActionListener {
 	private JButton addCustomer;
 	private JButton updateCustomer;
 	private JButton viewCustomer;
+	private JButton back;
 	
 	public CustomersPage() {
 		setTitle("Customer page");
@@ -30,6 +31,8 @@ public class CustomersPage extends JFrame implements ActionListener {
 		addCustomer=new JButton("Add Customer");
 		updateCustomer=new JButton("Update Customer");
 		viewCustomer=new JButton("View Customer");
+		
+		back=new JButton("Back");
 		
 		setLayout(new GridBagLayout());
 	    GridBagConstraints gc=new GridBagConstraints();
@@ -51,9 +54,14 @@ public class CustomersPage extends JFrame implements ActionListener {
 	    gc.gridy=2;
 	    add(viewCustomer,gc);
 	    
+	    gc.gridx=0;
+	    gc.gridy=3;
+	    add(back,gc);
+	    
 	    addCustomer.addActionListener(this);
 	    updateCustomer.addActionListener(this);
-	    viewCustomer.addActionListener(this);		
+	    viewCustomer.addActionListener(this);
+	    back.addActionListener(this);
 	}
 
 	public static void main(String[] args) {
@@ -72,9 +80,13 @@ public class CustomersPage extends JFrame implements ActionListener {
 			this.dispose();
 			UpdateCustomerPage deleteProd=new UpdateCustomerPage();
 		}
-		else {
+		else if(e.getSource()==viewCustomer){
 			this.dispose();
 			ViewCustomerPage viewCustomer=new ViewCustomerPage();
+		}
+		else {
+			this.dispose();
+			HomePage customer=new HomePage();
 		}
 	}
 }

@@ -23,6 +23,7 @@ public class DeleteProductPage extends JFrame implements ActionListener{
 	private JTextField productId;
 	
 	private JButton delete;
+	private JButton back;
 	
 	private ProductDAO prodDAO;
 	public DeleteProductPage() {
@@ -42,6 +43,7 @@ public class DeleteProductPage extends JFrame implements ActionListener{
 		productId=new JTextField(20);
 		
 	    delete=new JButton("Delete");
+	    back=new JButton("Back");
 	    
 	    setLayout(new GridBagLayout());
 	    GridBagConstraints gc=new GridBagConstraints();
@@ -67,7 +69,12 @@ public class DeleteProductPage extends JFrame implements ActionListener{
 	    gc.gridy=1;
 	    add(delete,gc);
 	    
+	    gc.gridx=0;
+	    gc.gridy=1;
+	    add(back,gc);
+	    
 	    delete.addActionListener(this);    
+	    back.addActionListener(this);
 	}
 	public static void main(String[] args) {
 		DeleteProductPage dp=new DeleteProductPage();
@@ -77,6 +84,7 @@ public class DeleteProductPage extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		Product product=new Product();
 		prodDAO=new ProductDAO();
+		if(e.getSource()==delete) {
 		if(productId.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Please enter product id!");
         }else{
@@ -96,5 +104,11 @@ public class DeleteProductPage extends JFrame implements ActionListener{
 		
 		
 	}
+	
+	else {
+		this.dispose();
+		ProductsPage hp=new ProductsPage();
+	}
 
+}
 }
