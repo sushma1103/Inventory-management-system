@@ -53,7 +53,7 @@ public class UserDAO{
     // Add user to database
     public void addUserDAO(User user) {
     	try{             	
-            String query = "INSERT INTO users (user_id, name, Location, Phone, Category, email) VALUES ('" + user.getUserId() +"','"+user.getName()+"','"+user.getLocation()  +"','"+user.getPhone() +"','"+user.getCategory() +"','"+user.getEmail()+"');";
+            String query = "INSERT INTO users (name, Location, Phone, Category, email) VALUES ('"+user.getName()+"','"+user.getLocation()  +"','"+user.getPhone() +"','"+user.getCategory() +"','"+user.getEmail()+"');";
             pstmt=con.prepareStatement(query);
             pstmt.executeUpdate();
           }

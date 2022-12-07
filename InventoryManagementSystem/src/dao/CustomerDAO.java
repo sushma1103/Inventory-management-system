@@ -46,7 +46,7 @@ public class CustomerDAO {
 	    // Add customer details to database
         public void addCustomerDAO(Customer customer) {
             try{
-            	String query = "INSERT INTO customers (customer_id, customer_code, customer_name, Location, Phone, email) VALUES ('" + customer.getCustomerId() +"','"+customer.getCustomerCode()+"','"+customer.getName()  +"','"+customer.getLocation() +"','"+customer.getPhone() +"','"+customer.getEmail()+"');";
+            	String query = "INSERT INTO customers (customer_code, customer_name, Location, Phone, email) VALUES ('"+customer.getCustomerCode()+"','"+customer.getName()  +"','"+customer.getLocation() +"','"+customer.getPhone() +"','"+customer.getEmail()+"');";
             	pstmt=con.prepareStatement(query);
             	pstmt.executeUpdate();
             }
