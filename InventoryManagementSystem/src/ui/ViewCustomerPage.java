@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -30,6 +31,8 @@ private JPanel panel;
 	
 	private CustomerDAO custDAO;
 	
+	private JButton back;
+	
 	public ViewCustomerPage() {
 		setTitle("View Customer page");
 		setPanel();
@@ -42,7 +45,8 @@ private JPanel panel;
 	
 	private void setPanel() {
 		panel = new JPanel();
-		panel.setLayout(new GridBagLayout());
+		back=new JButton("Back");
+		
 	    
 		String[] columnNames= {"Customer Id","Customer Name","Customer Code","Email"};
 		DefaultTableModel model = new DefaultTableModel();
@@ -76,14 +80,32 @@ private JPanel panel;
         panel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createEtchedBorder(), "Customers view", TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION));
  
-       panel.add(scrollPane);
-       add(panel);
+        /* Set weights */
+       /*panel.setLayout(new BorderLayout());
+        GridBagConstraints gc=new GridBagConstraints();
+	    gc.weightx=0.5;
+	    gc.weighty=0.5;
+	    
+	    gc.gridx=0;
+	    gc.gridy=0;
+	    gc.gridheight=1;
+	    add(back,gc);*/
+	    
+	    /*panel.add(scrollPane);
+	    panel.add(back);*/
+	    panel.add(new JScrollPane(jTable), BorderLayout.CENTER);
+	    panel.add(back, BorderLayout.SOUTH);
+	    add(panel);
+       
+       back.addActionListener(this);
         
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
+			  	this.dispose();
+			  	CustomersPage hp=new CustomersPage();
 	}
 	
 	public static void main(String[] args) {

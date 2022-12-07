@@ -38,6 +38,8 @@ public class UpdateProductPage extends JFrame implements ActionListener{
 	
 	private JButton update;
 	
+	private JButton back;
+	
 	public UpdateProductPage() {
 		setTitle("Update products page");
 		setPanel();
@@ -68,6 +70,8 @@ public class UpdateProductPage extends JFrame implements ActionListener{
 	    prodPrice=new JTextField(20);
 	    
 	    update=new JButton("Update");
+	    
+	    back=new JButton("Back");
 	    
 	    panel.add(productId);
 		panel.add(prodId);
@@ -139,8 +143,12 @@ public class UpdateProductPage extends JFrame implements ActionListener{
 	    gc.gridy=6;
 	    add(update,gc);
 	    
+	    gc.gridx=0;
+	    gc.gridy=6;
+	    add(back,gc);
+	    
 	    update.addActionListener(this);
-	   
+	    back.addActionListener(this);
 		
 		
 	}
@@ -150,6 +158,7 @@ public class UpdateProductPage extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		Product product=new Product();
 		prodDAO=new ProductDAO();
+		if(e.getSource()==update) {
     	if(productId.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Please enter product id!");
         }else{
@@ -171,6 +180,10 @@ public class UpdateProductPage extends JFrame implements ActionListener{
         	}
         	
         }
+		}else {
+			this.dispose();
+			ProductsPage prod=new ProductsPage();
+		}
 		
 	}
 	
