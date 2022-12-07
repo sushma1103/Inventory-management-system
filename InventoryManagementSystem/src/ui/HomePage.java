@@ -28,7 +28,7 @@ public class HomePage extends JFrame implements ActionListener{
 	public HomePage() {
 		setTitle("Home page");
 		setPanel();
-		setSize(800,500);
+		setSize(1000,800);
 		/* Set frame to center of the screen */
     	setLocationRelativeTo(null);
 		setVisible(true);

@@ -41,7 +41,7 @@ import pojo.User;
 		public AddUserPage(){
 			setTitle("Add User page");
 			setPanel();
-			setSize(500,500);
+			setSize(1000,800);
 			setLocationRelativeTo(null);
 			setVisible(true);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			

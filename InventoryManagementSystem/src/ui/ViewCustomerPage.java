@@ -36,7 +36,7 @@ private JPanel panel;
 	public ViewCustomerPage() {
 		setTitle("View Customer page");
 		setPanel();
-		setSize(500,500);
+		setSize(500,800);
 		/* Set frame to center of the screen */
     	setLocationRelativeTo(null);
 		setVisible(true);
