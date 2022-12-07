@@ -29,7 +29,7 @@ public class DeleteProductPage extends JFrame implements ActionListener{
 	public DeleteProductPage() {
 		setTitle("Delete products page");
 		setPanel();
-		setSize(500,500);
+		setSize(1000,800);
 		/* Set frame to center of the screen */
     	setLocationRelativeTo(null);
 		setVisible(true);

@@ -18,7 +18,7 @@ public class CustomersPage extends JFrame implements ActionListener {
 	public CustomersPage() {
 		setTitle("Customer page");
 		setPanel();
-		setSize(500,500);
+		setSize(1000,800);
 		/* Set frame to center of the screen */
     	setLocationRelativeTo(null);
 		setVisible(true);

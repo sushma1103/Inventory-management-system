@@ -36,7 +36,7 @@ public class ViewProductsPage extends JFrame implements ActionListener{
 	public ViewProductsPage() {
 		setTitle("View products page");
 		setPanel();
-		setSize(500,500);
+		setSize(500,800);
 		/* Set frame to center of the screen */
     	setLocationRelativeTo(null);
 		setVisible(true);
