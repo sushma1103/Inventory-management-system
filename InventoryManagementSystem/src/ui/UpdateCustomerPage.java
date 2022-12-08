@@ -180,13 +180,12 @@ import pojo.User;
 				 Customer customer=new Customer();
 				 custDAO=new CustomerDAO();
 			
-				 if(emailAddress.getText().equals("")){
-					 JOptionPane.showMessageDialog(null,"Please enter email!");
+				 if(uniqueId.getText().equals("")){
+					 JOptionPane.showMessageDialog(null,"Please enter id!");
 				 }   
 				 else {
-					 customer.setEmail(emailAddress.getText());
-					 List<String> ids=custDAO.getCustomerIds();
-					 if(ids!=null && ids.size()>0 && ids.contains((emailAddress.getText()))){
+					 List<Integer> ids=custDAO.getCustomerIds();
+					 if(ids!=null && ids.size()>0 && ids.contains(Integer.parseInt(uniqueId.getText()))){
 						 customer.setCustomerId(uniqueId.getText());
 						 customer.setName(customerName.getText());
 						 customer.setLocation(customerLocation.getText());

@@ -177,14 +177,13 @@ import pojo.User;
 				User user=new User();
 				userDAO=new UserDAO();
 			
-				if(emailAddress.getText().equals("")){
-					JOptionPane.showMessageDialog(null,"Please enter email!");
+				if(uId.getText().equals("")){
+					JOptionPane.showMessageDialog(null,"Please enter user id!");
 				}   
 				else {
-					user.setEmail(emailAddress.getText());
-					List<String> ids=userDAO.getUserIds();
-					if(ids!=null && ids.size()>0 && ids.contains((emailAddress.getText()))){
-						user.setUserId(uId.getText());
+					List<Integer> ids=userDAO.getUserIds();
+					if(ids!=null && ids.size()>0 && ids.contains(Integer.parseInt(uId.getText()))){
+						user.setUserId(Integer.parseInt(uId.getText()));
 						user.setName(userName.getText());
 						user.setLocation(userLocation.getText());
 						user.setPhone(phoneNumber.getText());
