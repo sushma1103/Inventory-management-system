@@ -162,7 +162,6 @@ public class UpdateProductPage extends JFrame implements ActionListener{
     	if(productId.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Please enter product id!");
         }else{
-        	product.setProductId(Integer.parseInt(prodId.getText()));
         	List<Integer> ids=prodDAO.getProductIds();
         	/* Check if product id exists otherwise throw error */
         	if(ids!=null && ids.size()>0 && ids.contains(Integer.parseInt(prodId.getText()))){

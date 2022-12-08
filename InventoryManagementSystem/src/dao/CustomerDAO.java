@@ -76,13 +76,13 @@ public class CustomerDAO {
     	}
         
     	//Get list of customer ids
-    	public List<String> getCustomerIds(){
-    		List<String> list=new ArrayList<>();
+    	public List<Integer> getCustomerIds(){
+    		List<Integer> list=new ArrayList<>();
     		try {
-    			 String query = "SELECT email from customers";
+    			 String query = "SELECT customer_id from customers";
     			 result=stmt.executeQuery(query);
     			 while(result.next()) {
-    				 list.add(result.getString(1));
+    				 list.add(result.getInt(1));
     			 }
     		}
     		catch(Exception e) {
