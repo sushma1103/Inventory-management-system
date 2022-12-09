@@ -77,7 +77,9 @@ private JPanel panel;
         panel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createEtchedBorder(), "Users view", TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION));
         
+        jTable.setBackground(new java.awt.Color(204, 227, 227));
         panel.add(new JScrollPane(jTable), BorderLayout.CENTER);
+        
 	    panel.add(back, BorderLayout.SOUTH);
         back.addActionListener(this);
         add(panel);
@@ -90,10 +92,9 @@ private JPanel panel;
 		UsersPage users=new UsersPage();
 	}
 	
-	public static void main(String[] args) {
-		ViewUsersPage viewUsers=new ViewUsersPage();
-
-	}
+	
+	
+	
 	
 	
 }

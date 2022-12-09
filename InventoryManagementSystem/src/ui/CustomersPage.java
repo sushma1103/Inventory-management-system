@@ -21,6 +21,7 @@ public class CustomersPage extends JFrame implements ActionListener {
 		setSize(1000,800);
 		/* Set frame to center of the screen */
     	setLocationRelativeTo(null);
+    	getContentPane().setBackground(new java.awt.Color(204, 227, 227));
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -64,10 +65,7 @@ public class CustomersPage extends JFrame implements ActionListener {
 	    back.addActionListener(this);
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		CustomersPage cp=new CustomersPage();
-	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {		

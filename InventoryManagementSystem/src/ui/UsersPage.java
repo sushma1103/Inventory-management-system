@@ -23,6 +23,7 @@ public class UsersPage extends JFrame implements ActionListener{
 		setSize(1000,800);
 		/* Set frame to center of the screen */
     	setLocationRelativeTo(null);
+    	getContentPane().setBackground(new java.awt.Color(204, 227, 227));
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -71,10 +72,7 @@ public class UsersPage extends JFrame implements ActionListener{
 	    back.addActionListener(this);
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		UsersPage up=new UsersPage();
-	}
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {

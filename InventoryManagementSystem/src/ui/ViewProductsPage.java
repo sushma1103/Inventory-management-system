@@ -39,6 +39,7 @@ public class ViewProductsPage extends JFrame implements ActionListener{
 		setSize(500,800);
 		/* Set frame to center of the screen */
     	setLocationRelativeTo(null);
+    	getContentPane().setBackground(new java.awt.Color(204, 227, 227));
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -81,10 +82,12 @@ public class ViewProductsPage extends JFrame implements ActionListener{
                 BorderFactory.createEtchedBorder(), "Products view", TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION));
         
        //panel.add(scrollPane);
+        jTable.setBackground(new java.awt.Color(204, 227, 227));
         panel.add(new JScrollPane(jTable), BorderLayout.CENTER);
 	    panel.add(back, BorderLayout.SOUTH);
+	   
 	    back.addActionListener(this);
-       add(panel);
+        add(panel);
         
 	}
 	@Override
@@ -94,10 +97,7 @@ public class ViewProductsPage extends JFrame implements ActionListener{
 		ProductsPage hp=new ProductsPage();
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ViewProductsPage viewProducts=new ViewProductsPage();
-
-	}
+	
+	
 
 }

@@ -34,6 +34,7 @@ import pojo.User;
 			setSize(1000,800);
 			/* Set frame to center of the screen */
 	    	setLocationRelativeTo(null);
+	    	getContentPane().setBackground(new java.awt.Color(204, 227, 227));
 			setVisible(true);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			
 		}
@@ -81,9 +82,7 @@ import pojo.User;
 		    back.addActionListener(this);		    
 		}
 		
-		public static void main(String[] args) {
-			DeleteUserPage dp=new DeleteUserPage();
-		}
+	
 
 		@Override
 		public void actionPerformed(ActionEvent e) {

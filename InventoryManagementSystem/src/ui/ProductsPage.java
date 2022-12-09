@@ -25,6 +25,7 @@ public class ProductsPage extends JFrame implements ActionListener{
 		setPanel();
 		setSize(1000,800);
 		/* Set frame to center of the screen */
+		getContentPane().setBackground(new java.awt.Color(204, 227, 227));
     	setLocationRelativeTo(null);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,10 +77,7 @@ public class ProductsPage extends JFrame implements ActionListener{
 	}
 	
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ProductsPage pp=new ProductsPage();
-	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
