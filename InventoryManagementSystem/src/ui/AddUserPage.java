@@ -40,6 +40,7 @@ import pojo.User;
 			setPanel();
 			setSize(1000,800);
 			setLocationRelativeTo(null);
+			getContentPane().setBackground(new java.awt.Color(204, 227, 227));
 			setVisible(true);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			
 		}
@@ -144,9 +145,7 @@ import pojo.User;
 		    back.addActionListener(this);	    	    
 		}
 		
-		public static void main(String[] args) {
-			AddUserPage ap=new AddUserPage();
-		}
+		
 
 		@Override
 		public void actionPerformed(ActionEvent event) {

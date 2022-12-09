@@ -80,20 +80,9 @@ private JPanel panel;
         panel.setBorder(BorderFactory.createTitledBorder(
                 BorderFactory.createEtchedBorder(), "Customers view", TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION));
  
-        /* Set weights */
-       /*panel.setLayout(new BorderLayout());
-        GridBagConstraints gc=new GridBagConstraints();
-	    gc.weightx=0.5;
-	    gc.weighty=0.5;
-	    
-	    gc.gridx=0;
-	    gc.gridy=0;
-	    gc.gridheight=1;
-	    add(back,gc);*/
-	    
-	    /*panel.add(scrollPane);
-	    panel.add(back);*/
+        jTable.setBackground(new java.awt.Color(204, 227, 227));
 	    panel.add(new JScrollPane(jTable), BorderLayout.CENTER);
+	  
 	    panel.add(back, BorderLayout.SOUTH);
 	    add(panel);
        
@@ -108,9 +97,5 @@ private JPanel panel;
 			  	CustomersPage hp=new CustomersPage();
 	}
 	
-	public static void main(String[] args) {
-		ViewCustomerPage viewCustomer=new ViewCustomerPage();
-
-	}
-
+	
 }

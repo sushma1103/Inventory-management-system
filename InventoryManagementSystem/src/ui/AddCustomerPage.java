@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -43,6 +44,7 @@ import pojo.Customer;
 			setSize(1000,800);
 			setLocationRelativeTo(null);
 			setVisible(true);
+			getContentPane().setBackground(new java.awt.Color(204, 248, 248));
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			
 		}
 
@@ -145,9 +147,7 @@ import pojo.Customer;
 		    back.addActionListener(this);		    
 		}
 		
-		public static void main(String[] args) {
-			AddCustomerPage ca =new AddCustomerPage();
-		}
+		
 
 		@Override
 		public void actionPerformed(ActionEvent event) {

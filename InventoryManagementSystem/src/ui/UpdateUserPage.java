@@ -49,6 +49,7 @@ import pojo.User;
 			setSize(1000,800);
 			/* Set frame to center of the screen */
 	    	setLocationRelativeTo(null);
+	    	getContentPane().setBackground(new java.awt.Color(204, 227, 227));
 			setVisible(true);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);			
 		}
@@ -167,10 +168,7 @@ import pojo.User;
 		    back.addActionListener(this);	    
 		}
 		
-		public static void main(String[] args) {
-			UpdateUserPage up=new UpdateUserPage();
-		}
-
+		
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource()==update) {
