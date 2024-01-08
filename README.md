@@ -1,6 +1,7 @@
 # Inventory-management-system
 
 Purpose and Scope Statement:
+
 The purpose of this project is to create an application for inventory management for a retail store. The scope of this project includes management of users/store employees, products and customer details. Admin manages users. User handles product and customer details. Admin and users are responsible for the inventory management. User issues products to the customers based on the orders placed. This project assumes inventory has products stored that have been purchased from the suppliers. 
 
 Requirements Narrative:
