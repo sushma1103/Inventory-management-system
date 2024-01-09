@@ -20,4 +20,17 @@ In this project, an inventory management system will be created.  The admin will
 
 6)Update customer details 
 
+The following diagrams depict the logic specifications of the inventory management system:
+
+1)User details flow:
+
+![Alt text](<logic spec-1-1.JPG>)
+
+2)Customer-store interaction:
+
+![Alt text](<logic spec-2-1.JPG>)
+
+
+
+
  
