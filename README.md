@@ -24,11 +24,11 @@ The following diagrams depict the logic specifications of the inventory manageme
 
 1)User details flow:
 
-![Alt text](<logic spec-1-1.JPG>)
+![Alt text](logic.JPG)
 
 2)Customer-store interaction:
 
-![Alt text](<logic spec-2-1.JPG>)
+![Alt text](specific.JPG)
 
 
 
