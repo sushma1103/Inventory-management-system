@@ -1,4 +1,8 @@
 # Inventory-management-system
+This is an application developed using Java, Swing and MySQL which provides as easy way to track the products, customers and users for Physical retail Store.
+There are two users, Admin and store users. Both the users can manage products, customers.
+The only difference between users and administrator is administrator can create, view and manage other users.
+
 
 Purpose and Scope:
 
@@ -21,6 +25,7 @@ In this project, an inventory management system will be created.  The admin will
 
 6)Update customer details 
 
+
 The following diagrams depict the logic specifications of the inventory management system:
 
 1)User details flow:
@@ -31,6 +36,23 @@ The following diagrams depict the logic specifications of the inventory manageme
 
 ![Alt text](specific.JPG)
 
+For creating database, import the databaseschema.sql file in MySQL workbench.
+
+MySQL workbench download link:
+https://dev.mysql.com/downloads/workbench/
+
+JDBC Jar for MySQL:
+https://dev.mysql.com/downloads/connector/j/
+
+Credentials:
+To login to Inventory Management System try using the below credentials. 
+Admin:
+username: `sushma` and password: `pass123`
+username: `anita` and password: `pass123`
+User:
+username: `gretta` password: `pass123`
+
+Also make sure mysql is username: `root` and password: `admin`.
 
 
 
