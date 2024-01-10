@@ -45,10 +45,11 @@ JDBC Jar for MySQL:
 https://dev.mysql.com/downloads/connector/j/
 
 Credentials:
-To login to Inventory Management System try using the below credentials. 
+To login to Inventory Management System application try using the below credentials. 
+
 Admin:
 username: `sushma` and password: `pass123`
-username: `anita` and password: `pass123`
+
 User:
 username: `gretta` password: `pass123`
 
