@@ -36,7 +36,11 @@ The following diagrams depict the logic specifications of the inventory manageme
 
 ![Alt text](specific.JPG)
 
-For creating database, import the databaseschema.sql file in MySQL workbench.
+Installation steps:
+
+1)Import the code to Eclipse IDE.
+
+2)For creating database, import the databaseschema.sql file in MySQL workbench. Also download jdbc jar file.
 
 MySQL workbench download link:
 https://dev.mysql.com/downloads/workbench/
@@ -44,7 +48,9 @@ https://dev.mysql.com/downloads/workbench/
 JDBC Jar for MySQL:
 https://dev.mysql.com/downloads/connector/j/
 
-Credentials:
+3)Run the code to launch the application
+
+4)Credentials:
 To login to Inventory Management System application use the below credentials. 
 
 Admin:
@@ -54,6 +60,8 @@ User:
 username: `gretta` password: `pass123`
 
 Also make sure mysql is username: `root` and password: `admin`.
+
+
 
 
 
