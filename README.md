@@ -52,6 +52,7 @@ https://dev.mysql.com/downloads/connector/j/
 
 4)Credentials:
 To login to Inventory Management System application use the below credentials. 
+
 Admin:
    - Username: `sushma`
    - Password: `pass123`
